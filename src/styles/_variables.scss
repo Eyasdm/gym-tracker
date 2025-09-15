@@ -1,0 +1,86 @@
+// ==============================
+// Gym Tracker – Design Tokens
+// ==============================
+
+// ---------- Colors (Base) ----------
+$color-bg: #0e1424; // App background (very dark navy)
+$color-surface: #131a2b; // Cards / panels base
+$color-surface-2: #1a2236; // Elevated surface (filters, stat card)
+$color-border: rgba(255, 255, 255, 0.06); // Subtle borders/dividers
+
+$color-text: #ecf3ff; // Primary text (almost white with a blue tint)
+$color-muted: #a5bad4; // Secondary text (labels, subheads)
+
+$color-primary: #60a5fa; // Primary accent (blue for links/emphasis)
+$color-accent: #885af8; // Secondary accent (violet)
+$color-success: #86f1ee; // "Done" pill background
+$color-success-text: #0c2730; // Text on the "Done" pill
+$color-danger: #ff5d5d; // Delete/trash icon/button
+
+// Gradient used in + card
+$gradient-primary: linear-gradient(to right, #3941d0 0%, #6e41a2 100%);
+
+// ---------- Typography ----------
+$font-sans: "Inter", sans-serif;
+$font-headings: "Poppins", sans-serif;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Sizes tuned for mobile first UI in mock
+
+// Line-heights
+$lh-tight: 1.15;
+$lh-normal: 1.35;
+$lh-relaxed: 1.5;
+
+// ---------- Shadows (subtle, for dark UI) ----------
+$shadow-s: 0 4px 12px rgba(0, 0, 0, 0.25);
+$shadow-m: 0 10px 30px rgba(0, 0, 0, 0.35);
+$shadow-l: 0 20px 50px rgba(0, 0, 0, 0.45);
+
+// ---------- Z-index ----------
+$z-nav: 100;
+$z-card: 200;
+$z-fab: 500;
+$z-modal: 1000;
+
+// ---------- Component Tokens ----------
+$chip-done-bg: $color-success;
+$chip-done-text: $color-success-text;
+$chip-danger-text: #ffffff;
+
+$card-bg: $color-surface;
+$card-elevated-bg: $color-surface-2;
+$card-radius: 0.8rem;
+$card-shadow: $shadow-s;
+
+$stat-card-gradient: $gradient-primary;
+
+$floating-action-size: 64px;
+$floating-action-gradient: $gradient-primary;
+$floating-action-icon: #ffffff;
+
+// ---------- Transitions ----------
+$trs-fast: 120ms cubic-bezier(0.2, 0.8, 0.2, 1);
+$trs: 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+$trs-slow: 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+
+// ---------- CSS Variables (optional export) ----------
+// Use this if you want runtime theming via var(--token).
+:root {
+  --bg: #{$color-bg};
+  --surface: #{$color-surface};
+  --surface-2: #{$color-surface-2};
+  --border: #{$color-border};
+
+  --text: #{$color-text};
+  --muted: #{$color-muted};
+
+  --primary: #{$color-primary};
+  --accent: #{$color-accent};
+  --danger: #{$color-danger};
+
+  --grad-primary: #{$gradient-primary};
+}

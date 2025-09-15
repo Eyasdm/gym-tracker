@@ -1,0 +1,58 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  /* The percentage of the user`s browser font-size setting (62.5%) */
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $font-sans;
+  min-height: 100dvh;
+  // padding-bottom: 10rem;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #0e1424 0%, #131a2b 100%);
+  // position: relative;
+}
+h1,
+h2,
+h3,
+.header__title,
+.day-tabs__day,
+.summary-cards__num,
+.workout-card__title {
+  font-family: $font-headings;
+}
+
+.grid--2--cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--3--cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid--4--cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid--5--cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid--center-v {
+  align-items: center;
+}
+.container {
+  padding-inline: 1.5rem;
+  padding-bottom: 10rem;
+}
+.margin {
+  margin: 1.5rem 0;
+}
