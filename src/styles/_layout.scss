@@ -1,0 +1,19 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  &__icon {
+    margin-left: 0.3rem;
+    width: 2rem;
+    height: 2rem;
+    color: $color-text;
+  }
+  &__title {
+    color: $color-text;
+    font-size: 3.2rem;
+  }
+}
