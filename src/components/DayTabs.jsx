@@ -1,3 +1,7 @@
+// each day should have it own tabs and detail connected to it:
+//  create a seperate page for every day
+//  the stats should be changed when going from day to another
+
 export function DayTabs() {
   return (
     <nav className="day-tabs margin ">

@@ -1,6 +1,5 @@
 import { DayTabs } from "./components/DayTabs";
 import Header from "./components/Header";
-import { AddWorkoutBtn, Popup } from "./components/Popup";
 import { SummaryCards } from "./components/SummaryCards";
 import { WorkoutFilters } from "./components/WorkoutFilters";
 import WorkoutForm from "./components/WorkoutForm";
@@ -15,8 +14,6 @@ export default function App() {
       <SummaryCards />
       <WorkoutFilters />
       <WorkoutForm />
-      <AddWorkoutBtn />
-      <Popup />
     </div>
   );
 }

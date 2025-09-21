@@ -1,3 +1,5 @@
+// use sort method to sort according to the muscle.
+// use sort method to sort according to the status.
 export function WorkoutFilters() {
   return (
     <section className="workout-filters grid--2--cols margin">

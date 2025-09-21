@@ -1,3 +1,6 @@
+import { useState } from "react";
+
+//  send the information to the workout form.
 export function AddWorkoutBtn() {
   return (
     <div className="add-workout-btn__container">
@@ -7,7 +10,9 @@ export function AddWorkoutBtn() {
     </div>
   );
 }
-export function Popup() {
+export function Popup({ onAddWorkout }) {
+  const [newWorkout, setNewWorkout] = useState({ sets: 3, reps: 8, weight: 0 });
+
   return (
     <div className="popup" id="popup">
       <div className="popup__content">
@@ -35,9 +40,18 @@ export function Popup() {
           type="text"
           className="popup__input input"
           placeholder="Exercise Name"
+          onChange={(e) =>
+            setNewWorkout({ ...newWorkout, name: e.target.value })
+          }
         />
 
-        <select id="muscle" className="popup__select">
+        <select
+          id="muscle"
+          className="popup__select"
+          onChange={(e) =>
+            setNewWorkout({ ...newWorkout, part: e.target.value })
+          }
+        >
           <option value="all">Muscle</option>
           <option value="chest">Chest</option>
           <option value="back">Back</option>
@@ -54,6 +68,9 @@ export function Popup() {
               type="number"
               className="popup__sets-input"
               defaultValue={3}
+              onChange={(e) =>
+                setNewWorkout({ ...newWorkout, sets: e.target.value })
+              }
             />
           </div>
           <div className="popup__sets-field">
@@ -62,6 +79,9 @@ export function Popup() {
               type="number"
               className="popup__sets-input"
               defaultValue={8}
+              onChange={(e) =>
+                setNewWorkout({ ...newWorkout, reps: e.target.value })
+              }
             />
           </div>
         </div>
@@ -74,13 +94,22 @@ export function Popup() {
               type="number"
               className="popup__weight-input"
               placeholder="0"
+              onChange={(e) =>
+                setNewWorkout({ ...newWorkout, weight: e.target.value })
+              }
             />
             <span className="popup__weight-unit">kg</span>
           </div>
         </div>
 
         {/* Add button */}
-        <button className="popup__btn">Add</button>
+        <a
+          href="#"
+          className="popup__btn"
+          onClick={() => onAddWorkout(newWorkout)}
+        >
+          Add
+        </a>
       </div>
     </div>
   );

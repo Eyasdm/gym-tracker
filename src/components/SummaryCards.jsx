@@ -1,3 +1,8 @@
+// connect the total to the total of workout for the day
+// connect the completed to the workouts that has the done tag in them.
+// calculate the total voulme for the day.
+
+
 export function SummaryCards() {
   return (
     <section className="summary-cards grid--3--cols margin">
