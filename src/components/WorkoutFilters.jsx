@@ -1,11 +1,19 @@
-// use sort method to sort according to the muscle.
-// use sort method to sort according to the status.
-export function WorkoutFilters() {
+export function WorkoutFilters({
+  selectedMuscle,
+  selectedStatus,
+  setSelectedMuscle,
+  setSelectedStatus,
+}) {
   return (
     <section className="workout-filters grid--2--cols margin">
       <div className="workout-filters__item">
         <div className="workout-filters__name">Muscle</div>
-        <select id="muscle" className="workout-filters__select">
+        <select
+          id="muscle"
+          className="workout-filters__select"
+          value={selectedMuscle}
+          onChange={(e) => setSelectedMuscle(e.target.value)}
+        >
           <option value="all">All</option>
           <option value="chest">Chest</option>
           <option value="back">Back</option>
@@ -14,14 +22,20 @@ export function WorkoutFilters() {
           <option value="shoulders">Shoulders</option>
         </select>
       </div>
+
       <div className="workout-filters__item">
         <label className="workout-filters__name" htmlFor="status">
           Status
         </label>
-        <select id="status" className="workout-filters__select">
-          <option value="not-done">Not done</option>
-          <option value="done">Done</option>
+        <select
+          id="status"
+          className="workout-filters__select"
+          value={selectedStatus}
+          onChange={(e) => setSelectedStatus(e.target.value)}
+        >
           <option value="all">All</option>
+          <option value="done">Done</option>
+          <option value="not-done">Not done</option>
         </select>
       </div>
     </section>
