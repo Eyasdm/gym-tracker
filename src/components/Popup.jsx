@@ -1,23 +1,67 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 //  send the information to the workout form. ✅
-export function AddWorkoutBtn() {
+export function AddWorkoutBtn({ onIsPopupOpen }) {
   return (
     <div className="add-workout-btn__container">
-      <a href="#popup" className="add-workout-btn">
+      <button
+        onClick={() => onIsPopupOpen(true)}
+        href="#popup"
+        className="add-workout-btn"
+      >
         +
-      </a>
+      </button>
     </div>
   );
 }
-export function Popup({ onAddWorkout }) {
-  const [newWorkout, setNewWorkout] = useState({ sets: 3, reps: 8, weight: 0 });
+export function Popup({ onAddWorkout, onClose, currentDay }) {
+  const [newWorkout, setNewWorkout] = useState({
+    name: "",
+    part: "",
+    sets: 3,
+    reps: 8,
+    weight: 0,
+    day: currentDay,
+  });
+
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsActive(true), 10);
+    return () => clearTimeout(timer);
+  }, []);
+
+  function onSubmit() {
+    if (!newWorkout.name.trim() || !newWorkout.part || newWorkout.weight <= 0) {
+      alert(
+        "Please fill in all required fields (Exercise name, Muscle, Weight)."
+      );
+      return;
+    }
+    onAddWorkout(newWorkout);
+    onClose();
+  }
+
+  function handleClose() {
+    const popup = document.querySelector(".popup");
+    popup.classList.add("closing");
+
+    setTimeout(() => {
+      onClose();
+      popup.classList.remove("closing");
+    }, 350);
+  }
 
   return (
-    <div className="popup" id="popup">
+    <div
+      className={`popup ${isActive ? "popup--active" : ""}`}
+      onClick={(e) => {
+        if (e.target.classList.contains("popup")) onClose();
+      }}
+    >
       <div className="popup__content">
-        {/* close link */}
-        <a href="#" className="popup__close">
+        {/* close button */}
+        <a className="popup__close" onClick={handleClose}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -38,28 +82,26 @@ export function Popup({ onAddWorkout }) {
 
         <input
           type="text"
-          className="popup__input input"
           placeholder="Exercise Name"
+          className="popup__input input"
           onChange={(e) =>
             setNewWorkout({ ...newWorkout, name: e.target.value })
           }
         />
 
         <select
-          id="muscle"
           className="popup__select"
           onChange={(e) =>
             setNewWorkout({ ...newWorkout, part: e.target.value })
           }
         >
-          <option value="all">Muscle</option>
+          <option value="">Select Muscle</option>
           <option value="chest">Chest</option>
           <option value="back">Back</option>
           <option value="legs">Legs</option>
           <option value="arms">Arms</option>
           <option value="shoulders">Shoulders</option>
         </select>
-
         {/* Sets + Reps */}
         <div className="popup__sets">
           <div className="popup__sets-field">
@@ -86,7 +128,6 @@ export function Popup({ onAddWorkout }) {
           </div>
         </div>
 
-        {/* Weight */}
         <div className="popup__weight">
           <span className="popup__weight-label">Weight</span>
           <div className="popup__weight-control">
@@ -101,15 +142,9 @@ export function Popup({ onAddWorkout }) {
             <span className="popup__weight-unit">kg</span>
           </div>
         </div>
-
-        {/* Add button */}
-        <a
-          href="#"
-          className="popup__btn"
-          onClick={() => onAddWorkout(newWorkout)}
-        >
+        <button type="button" className="popup__btn" onClick={() => onSubmit()}>
           Add
-        </a>
+        </button>
       </div>
     </div>
   );

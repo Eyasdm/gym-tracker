@@ -1,17 +1,29 @@
-// each day should have it own tabs and detail connected to it:
-//  create a seperate page for every day
-//  the stats should be changed when going from day to another
+import { NavLink } from "react-router-dom";
 
 export function DayTabs() {
+  const days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+
   return (
-    <nav className="day-tabs margin ">
-      <div className="day-tabs__day day-tabs--day-active">Mon</div>
-      <div className="day-tabs__day">Tue</div>
-      <div className="day-tabs__day">Wed</div>
-      <div className="day-tabs__day">Thu</div>
-      <div className="day-tabs__day">Fri</div>
-      <div className="day-tabs__day">Sat</div>
-      <div className="day-tabs__day">Sun</div>
+    <nav className="day-tabs margin">
+      {days.map((day) => (
+        <NavLink
+          key={day}
+          to={`/${day}`}
+          className={({ isActive }) =>
+            isActive ? "day-tabs__day day-tabs__day--active" : "day-tabs__day"
+          }
+        >
+          {day.slice(0, 3)}
+        </NavLink>
+      ))}
     </nav>
   );
 }
