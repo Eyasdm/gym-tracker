@@ -1,7 +1,6 @@
 // recieve the workout from the popup and create a new workout form for the added workout. ✅
 // tag the workout to done when done button clicked ✅
 // delete the workout when the delete btn get clicked ✅
-
 import { FaTrash } from "react-icons/fa";
 import { AddWorkoutBtn, Popup } from "./Popup";
 import { useState } from "react";
@@ -74,7 +73,7 @@ function WorkoutItem({
   onToggleDelete,
 }) {
   return (
-    <div className="item margin grid--2--cols">
+    <div className={`item margin grid--2--cols `}>
       <div className="item__text">
         <p className="item__text--type">{name}</p>
         <p className="item__text--part">{part}</p>
@@ -90,7 +89,7 @@ function WorkoutItem({
         <button
           className="item__buttons--delete-btn"
           aria-label="Delete"
-          onClick={() => onToggleDelete(id)}
+          onClick={onToggleDelete}
         >
           <FaTrash />
         </button>

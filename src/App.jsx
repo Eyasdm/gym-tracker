@@ -6,6 +6,7 @@ import { SummaryCards } from "./components/SummaryCards";
 import { WorkoutFilters } from "./components/WorkoutFilters";
 import WorkoutForm from "./components/WorkoutForm";
 import "./styles/main.scss";
+import { useLocaleStorageState } from "./components/useLocalStorageState";
 
 const starterWorkout = [
   {
@@ -44,7 +45,10 @@ const starterWorkout = [
 ];
 
 function AppContent() {
-  const [workouts, setWorkouts] = useState(starterWorkout);
+  const [workouts, setWorkouts] = useLocaleStorageState(
+    starterWorkout,
+    "workout"
+  );
   const [selectedMuscle, setSelectedMuscle] = useState("all");
   const [selectedStatus, setSelectedStatus] = useState("all");
 
