@@ -1,12 +1,33 @@
-# React + Vite
+# 💪 Gym Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[🔗 Live demo](https://gym-tracker-eyas.netlify.app/) · ![Live badge](https://img.shields.io/badge/Live-Netlify-brightgreen)
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A sleek and minimal **Workout Tracking App** built with **React**, **Vite**, and **SCSS**, designed to help users organize and track their workouts by day and muscle group.  
+This project demonstrates **state management, routing with React Router, and local storage persistence**, providing a modern, smooth, and responsive user experience.  
+It’s lightweight, fast, and perfect for daily gym tracking.  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+* 📅 **Day-based navigation:** view and manage workouts for each day of the week  
+* 🏋️ **Add workouts easily** using a smooth popup form with transitions  
+* ✅ **Mark workouts as done or undo them**  
+* ❌ **Delete workouts** with fade-out animation  
+* 💾 **Auto-save to Local Storage** — data stays even after refreshing  
+* ⚡ **Responsive layout** optimized for desktop and mobile  
+* 🎨 Modern gradient UI with clean SCSS structure  
+
+---
+
+## Tech Stack
+
+* ⚛️ **React + Vite** — fast development and modular architecture  
+* 💅 **SCSS** — for reusable and organized component styles  
+* 🧭 **React Router DOM** — for clean day-based routing  
+* 🧠 **React Hooks** (`useState`, `useEffect`, `useMemo`, `useNavigate`, `useLocation`)  
+* 🗂️ **Local Storage** — for saving workouts persistently  
+
+---
