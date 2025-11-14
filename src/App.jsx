@@ -7,42 +7,7 @@ import { WorkoutFilters } from "./components/WorkoutFilters";
 import WorkoutForm from "./components/WorkoutForm";
 import "./styles/main.scss";
 import { useLocaleStorageState } from "./components/useLocalStorageState";
-
-const starterWorkout = [
-  {
-    id: 1,
-    name: "Bench Press",
-    part: "Chest",
-    sets: 3,
-    reps: 10,
-    weight: 100,
-    done: false,
-    order: 0,
-    day: "monday",
-  },
-  {
-    id: 2,
-    name: "Lat Pulldown",
-    part: "Back",
-    sets: 3,
-    reps: 12,
-    weight: 70,
-    done: true,
-    order: 1,
-    day: "tuesday",
-  },
-  {
-    id: 3,
-    name: "Squat",
-    part: "Legs",
-    sets: 4,
-    reps: 8,
-    weight: 120,
-    done: false,
-    order: 0,
-    day: "friday",
-  },
-];
+import { starterWorkout } from "../src/data/starterworkouts";
 
 function AppContent() {
   const [workouts, setWorkouts] = useLocaleStorageState(
