@@ -21,18 +21,17 @@ function AppContent() {
   const currentDay = (
     location.pathname.split("/")[1] || "monday"
   ).toLowerCase();
-
   const filtered = useMemo(() => {
     return workouts.filter((w) => {
       const muscleOk =
         selectedMuscle === "all" || w.part.toLowerCase() === selectedMuscle;
+
       const statusOk =
         selectedStatus === "all" ||
-        (selectedStatus === "done" ? w.done : !w.done);
-      const dayOk = currentDay === "" || w.day.toLowerCase() === currentDay;
+        (selectedStatus === "done" && w.done) ||
+        (selectedStatus === "not-done" && !w.done);
 
-      // if (!dayOk)
-      //   console.log("Skipped:", w.day, "because currentDay =", currentDay);
+      const dayOk = currentDay === "" || w.day.toLowerCase() === currentDay;
 
       return muscleOk && statusOk && dayOk;
     });
