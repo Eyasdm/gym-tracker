@@ -1,8 +1,7 @@
-// starterWorkout.js
-// Predefined workout plan with rest days on Wednesday and Sunday
+// Muscle groups adjusted to match filter options: Chest, Back, Legs, Arms, Shoulders
 
 export const starterWorkout = [
-  // ===== Monday – Chest & Triceps =====
+  // ===== Monday – Chest & Arms =====
   {
     id: 1,
     name: "Bench Press",
@@ -39,7 +38,7 @@ export const starterWorkout = [
   {
     id: 4,
     name: "Tricep Rope Pushdown",
-    part: "Triceps",
+    part: "Arms",
     sets: 3,
     reps: 12,
     weight: 35,
@@ -50,7 +49,7 @@ export const starterWorkout = [
   {
     id: 5,
     name: "Overhead Dumbbell Extension",
-    part: "Triceps",
+    part: "Arms",
     sets: 3,
     reps: 10,
     weight: 30,
@@ -59,7 +58,7 @@ export const starterWorkout = [
     day: "monday",
   },
 
-  // ===== Tuesday – Back & Biceps =====
+  // ===== Tuesday – Back & Arms =====
   {
     id: 6,
     name: "Lat Pulldown",
@@ -96,7 +95,7 @@ export const starterWorkout = [
   {
     id: 9,
     name: "Dumbbell Curl",
-    part: "Biceps",
+    part: "Arms",
     sets: 3,
     reps: 12,
     weight: 25,
@@ -107,7 +106,7 @@ export const starterWorkout = [
   {
     id: 10,
     name: "Hammer Curl",
-    part: "Biceps",
+    part: "Arms",
     sets: 3,
     reps: 10,
     weight: 20,
@@ -116,8 +115,8 @@ export const starterWorkout = [
     day: "tuesday",
   },
 
-  // ===== Wednesday – Rest (no workouts) =====
-  // Empty day
+  // ===== Wednesday – Rest =====
+  // Empty
 
   // ===== Thursday – Legs =====
   {
@@ -176,7 +175,7 @@ export const starterWorkout = [
     day: "thursday",
   },
 
-  // ===== Friday – Shoulders & Abs =====
+  // ===== Friday – Shoulders & Arms (Abs → Arms) =====
   {
     id: 16,
     name: "Shoulder Press",
@@ -224,7 +223,7 @@ export const starterWorkout = [
   {
     id: 20,
     name: "Plank",
-    part: "Abs",
+    part: "Arms",
     sets: 1,
     reps: 1,
     weight: 0,
@@ -233,11 +232,11 @@ export const starterWorkout = [
     day: "friday",
   },
 
-  // ===== Saturday – Full Body =====
+  // ===== Saturday – Full Body → Arms =====
   {
     id: 21,
     name: "Kettlebell Swing",
-    part: "Full Body",
+    part: "Arms",
     sets: 3,
     reps: 15,
     weight: 35,
@@ -248,7 +247,7 @@ export const starterWorkout = [
   {
     id: 22,
     name: "Dumbbell Thruster",
-    part: "Full Body",
+    part: "Arms",
     sets: 3,
     reps: 12,
     weight: 30,
@@ -259,7 +258,7 @@ export const starterWorkout = [
   {
     id: 23,
     name: "Pull-ups",
-    part: "Full Body",
+    part: "Arms",
     sets: 3,
     reps: 8,
     weight: 0,
@@ -270,7 +269,7 @@ export const starterWorkout = [
   {
     id: 24,
     name: "Push-ups",
-    part: "Full Body",
+    part: "Arms",
     sets: 3,
     reps: 15,
     weight: 0,
@@ -281,7 +280,7 @@ export const starterWorkout = [
   {
     id: 25,
     name: "Lunges",
-    part: "Full Body",
+    part: "Arms",
     sets: 3,
     reps: 12,
     weight: 25,
@@ -290,6 +289,6 @@ export const starterWorkout = [
     day: "saturday",
   },
 
-  // ===== Sunday – Rest (no workouts) =====
-  // Empty day
+  // ===== Sunday – Rest =====
+  // Empty
 ];
