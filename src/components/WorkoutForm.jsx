@@ -89,7 +89,7 @@ function WorkoutItem({
         <button
           className="item__buttons--delete-btn"
           aria-label="Delete"
-          onClick={onToggleDelete}
+          onClick={() => onToggleDelete(id)}
         >
           <FaTrash />
         </button>

@@ -57,7 +57,6 @@ function AppContent() {
     location.pathname.split("/")[1] || "monday"
   ).toLowerCase();
 
-  console.log(currentDay);
   const filtered = useMemo(() => {
     return workouts.filter((w) => {
       const muscleOk =
@@ -74,7 +73,6 @@ function AppContent() {
     });
   }, [workouts, selectedMuscle, selectedStatus, currentDay]);
 
-  console.log(filtered);
   function toggleDone(id) {
     setWorkouts((prev) =>
       prev.map((w) => (w.id === id ? { ...w, done: !w.done } : w))
