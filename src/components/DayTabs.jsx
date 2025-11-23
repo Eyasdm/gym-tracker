@@ -2,13 +2,13 @@ import { useEffect } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const days = [
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday",
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+  "saturday",
+  "sunday",
 ];
 
 export function DayTabs() {
@@ -17,8 +17,9 @@ export function DayTabs() {
 
   useEffect(() => {
     if (location.pathname === "/") {
-      const today = days[new Date().getDay() - 1];
-      navigate(`/${today.toLowerCase()}`, { replace: true });
+      const todayIndex = new Date().getDay(); // Sunday = 0
+      const today = days[todayIndex === 0 ? 6 : todayIndex - 1];
+      navigate(`/${today}`, { replace: true });
     }
   }, [location.pathname, navigate]);
 
@@ -32,7 +33,7 @@ export function DayTabs() {
             isActive ? "day-tabs__day day-tabs__day--active" : "day-tabs__day"
           }
         >
-          {day.slice(0, 3)}
+          {day.slice(0, 3).toUpperCase()}
         </NavLink>
       ))}
     </nav>
